@@ -51,5 +51,12 @@ namespace EventManger {
             }
             eventHandlersToAdd[(int)priority].Add(new KeyValuePair<Type, EventDelegate>(eventType,handler));
         }
+
+        public static void RemoveHandler(Type eventType, EventDelegate handler) {
+            if (!eventType.IsSubclassOf(typeof(Event))) {
+                throw new InvalidEventTypeException(eventType);
+            }
+            eventHandlersToRemove.Add(new KeyValuePair<Type, EventDelegate>(eventType, handler));
+        }
     }
 }
