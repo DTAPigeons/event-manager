@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManger.Exceptions {
+namespace EventMangement.Exceptions {
     public abstract class EventManagerExeption: Exception {
     }
 }

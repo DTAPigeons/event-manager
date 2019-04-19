@@ -1,11 +1,12 @@
-﻿using EventManger.Exceptions;
+﻿using EventMangement.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManger {
+namespace EventMangement
+{
     public delegate void EventDelegate(Event gameEvent);
     public enum EventHandlerPriority {
         High,
@@ -49,6 +50,10 @@ namespace EventManger {
             if (!eventType.IsSubclassOf(typeof(Event))) {
                 throw new InvalidEventTypeException(eventType);
             }
+            if(priority == EventHandlerPriority.Count)
+            {
+                throw new InvalidPriorityExeption(priority);
+            }
             eventHandlersToAdd[(int)priority].Add(new KeyValuePair<Type, EventDelegate>(eventType,handler));
         }
 
@@ -74,6 +79,7 @@ namespace EventManger {
             RemoveHandlers();
             AddHandlers();
             TransferEvents();
+            ProcessEvents();
         }
 
         private static void RemoveHandlers()

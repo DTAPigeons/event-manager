@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManger {
+namespace EventMangement
+{
     public abstract class Event {
 
     }

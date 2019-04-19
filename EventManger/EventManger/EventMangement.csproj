@@ -46,8 +46,11 @@
     <Compile Include="EventManager.cs" />
     <Compile Include="Exceptions\EventManagerExeption.cs" />
     <Compile Include="Exceptions\InvalidEventTypeException.cs" />
+    <Compile Include="Exceptions\InvalidPriorityExeption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestEventOne.cs" />
+    <Compile Include="TestEventTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
