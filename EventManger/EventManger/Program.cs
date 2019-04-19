@@ -15,7 +15,7 @@ namespace EventMangement {
             EventManager.QueueEvent(new TestEventOne("Hi ya!"));
 
             EventManager.AddEventHandler(typeof(TestEventTwo), HandleAnyEvent, EventHandlerPriority.High);
-            EventManager.AddEventHandler(typeof(TestEventTwo), HandleTestEventOne, EventHandlerPriority.Low);
+            EventManager.AddEventHandler(typeof(TestEventTwo), HandleTestEventOne);
             EventManager.AddEventHandler(typeof(TestEventTwo), HandleTestEventTwo);
 
             EventManager.QueueEvent(new TestEventTwo("Supp?"));
